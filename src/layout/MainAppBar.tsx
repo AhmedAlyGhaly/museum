@@ -44,7 +44,7 @@ export const MainAppBar = () => {
           <Box sx={{ display: 'flex', alignItems: 'center', mr: 2 }}>
             <img
               onClick={() => navigate('/')}
-              src="/public/logo_for_museum_of_science_and_innovation_for_kids__4_-removebg-preview.png"
+              src="/logo_for_museum_of_science_and_innovation_for_kids__4_-removebg-preview.png"
               alt="Museum Logo"
               style={{
                 width: '150px',
