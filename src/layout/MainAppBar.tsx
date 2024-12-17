@@ -13,12 +13,14 @@ import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NightModeToggle } from '../components';
+import { useColorTheme } from '../theme';
 
 const pages = ['Visit', 'About', 'Events', 'Opening', 'Timeline'];
 const settings = ['Profile', 'Account', 'Dashboard'];
 
 export const MainAppBar = () => {
   const navigate = useNavigate();
+  const { theme } = useColorTheme();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
@@ -38,7 +40,7 @@ export const MainAppBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: 'primary.main' }}>
+    <AppBar position="static" >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: 'flex', alignItems: 'center', mr: 2 }}>
@@ -64,14 +66,13 @@ export const MainAppBar = () => {
               display: { xs: 'flex', md: 'flex' },
               fontFamily: 'sans-serif',
               fontWeight: 500,
-              color: 'inherit',
+              color: theme.palette.text.primary,
               textDecoration: 'none',
             }}
           >
             Museum of Science and Innovation
           </Typography>
 
-          {/* Mobile Menu Icon */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -79,7 +80,6 @@ export const MainAppBar = () => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
             >
               <MenuIcon />
             </IconButton>
@@ -107,7 +107,6 @@ export const MainAppBar = () => {
             </Menu>
           </Box>
 
-          {/* Desktop Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -115,9 +114,9 @@ export const MainAppBar = () => {
                 onClick={() => handleCloseNavMenu(page)}
                 sx={{
                   my: 2,
-                  color: 'inherit',
+                  color: theme.palette.text.primary,
                   display: 'block',
-                  textTransform: 'capitalize',
+                  // textTransform: 'capitalize',
                   '&:hover': { backgroundColor: 'primary.light' },
                 }}
               >

@@ -12,7 +12,7 @@ export const NightModeToggle = () => {
 
     return (
 
-        <IconButton sx={{ ml: 1 }} onClick={handleToggleClick} color="inherit">
+        <IconButton sx={{ ml: 1 }} onClick={handleToggleClick}>
             {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>
     );

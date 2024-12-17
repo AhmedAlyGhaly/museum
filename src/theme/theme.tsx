@@ -1,9 +1,10 @@
 import { PaletteMode } from "@mui/material";
-import { amber, blueGrey, grey, orange } from "@mui/material/colors";
 
 export const theme = {
   palette: {
-    primary: orange,
+    primary: {
+      main: "#136A9C",
+    },
   },
 };
 
@@ -12,29 +13,37 @@ export const getDesignTokens = (mode: PaletteMode) => ({
     mode,
     ...(mode === "light"
       ? {
-          primary: orange,
-          secondary: amber,
-          divider: orange[300],
+          primary: {
+            main: "#A2D5E8", 
+          },
+          secondary: {
+            main: "#FBE0AB",
+          },
+          divider: "#BE0F1F",
           background: {
-            default: "#fff8e1",
-            paper: "#ffffff",
+            default: "#E7EAE7",
+            paper: "#FFFFFF",
           },
           text: {
-            primary: grey[900],
-            secondary: grey[700],
+            primary: "#333333",
+            secondary: "#666666",
           },
         }
       : {
-          primary: blueGrey,
-          secondary: orange,
-          divider: blueGrey[700],
+          primary: {
+            main: "#136A9C",
+          },
+          secondary: {
+            main: "#D0B22C",
+          },
+          divider: "#BE0F1F",
           background: {
-            default: blueGrey[800],
-            paper: blueGrey[900],
+            default: "#121212",
+            paper: "#333333",
           },
           text: {
-            primary: "#f5f5f5",
-            secondary: orange[400],
+            primary: "#E7EAE7",
+            secondary: "#D0B22C",
           },
         }),
   },
