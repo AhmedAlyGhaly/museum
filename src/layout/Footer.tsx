@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import React from "react";
+import React, { CSSProperties } from "react";
 import { FooterForm } from "../components/FooterForm";
 import { Nav } from "../components/Nav";
 import { TitleWithLogo } from "../components/TitleWithLogo";
@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = () => {
 
 
   return (
-    <footer style={styles.footer(theme)}>
+    <footer style={styles.footer(theme) as CSSProperties}>
       <div style={styles.leftSection}>
         <TitleWithLogo />
         <Nav />

@@ -11,7 +11,6 @@ interface CardWithImageProps {
     titleImage?: string;
     title?: string;
     description?: string;
-    link?: string;
     onClick?: () => void;
 }
 
@@ -20,7 +19,6 @@ export const CardWithImage: React.FC<CardWithImageProps> = ({
     titleImage,
     title,
     description,
-    link,
     onClick
 }) => {
     return (

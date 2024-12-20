@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import React from "react";
+import React, { CSSProperties } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useColorTheme } from "../theme";
 
@@ -23,12 +23,12 @@ export const FooterForm: React.FC = () => {
 
   return (
     <div style={styles.container}>
-      <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
-        <Typography style={styles.header(theme)}>stay informed</Typography>
+      <form onSubmit={handleSubmit(onSubmit)} style={styles.form as CSSProperties}>
+        <Typography style={styles.header(theme) as CSSProperties}>stay informed</Typography>
 
         {/* Email Field */}
         <div style={styles.field}>
-          <label htmlFor="email" style={styles.label}>
+          <label htmlFor="email" style={styles.label as CSSProperties}>
             email address
           </label>
           <input
@@ -38,12 +38,12 @@ export const FooterForm: React.FC = () => {
             {...register("email", { required: "Email is required" })}
             style={styles.input}
           />
-          {errors.email && <p style={styles.error}>{errors.email.message}</p>}
+          {errors.email && <p style={styles.error as CSSProperties}>{errors.email.message}</p>}
         </div>
 
         {/* Hero Dropdown */}
         <div style={styles.field}>
-          <label htmlFor="hero" style={styles.label}>
+          <label htmlFor="hero" style={styles.label as CSSProperties}>
             select a hero
           </label>
           <select
@@ -56,11 +56,11 @@ export const FooterForm: React.FC = () => {
             <option value="hero2">Hero 2</option>
             <option value="hero3">Hero 3</option>
           </select>
-          {errors.hero && <p style={styles.error}>{errors.hero.message}</p>}
+          {errors.hero && <p style={styles.error as CSSProperties}>{errors.hero.message}</p>}
         </div>
 
         {/* Submit Button */}
-        <button type="submit" style={styles.button}>
+        <button type="submit" style={styles.button as CSSProperties}>
           submit
         </button>
       </form>

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { CSSProperties, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import { useColorTheme } from '../theme';
 
 interface NavProps { }
 
-export const Nav: React.FC = () => {
+export const Nav: React.FC<NavProps> = () => {
     const navigate = useNavigate();
     const { theme } = useColorTheme();
     const [_, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -15,13 +15,13 @@ export const Nav: React.FC = () => {
         navigate(`/${pathname.toLowerCase()}`);
     };
     return (
-        <nav style={styles.nav}>
-            <Typography style={styles.navHeader(theme)}>navigate</Typography>
+        <nav style={styles.nav as CSSProperties}>
+            <Typography style={styles.navHeader(theme) as CSSProperties}>navigate</Typography>
             {pages.map((page) => (
                 <Typography
                     key={page}
                     onClick={() => handleCloseNavMenu(page)}
-                    sx={styles.navList(theme)}
+                    sx={styles.navList(theme) as CSSProperties}
                 >
                     {page}
                 </Typography>
