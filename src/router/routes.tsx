@@ -1,19 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
-import { About, Events, Home, Opening, Timeline, Visit } from "../pages";
 import { MainLayout } from "../layout";
+import { About, Events, Home, Opening, Resources, Visit } from "../pages";
+import { Energy } from "../pages/Energy";
+import { Water } from "../pages/Water";
+import { Wind } from "../pages/Wind";
 
 export const routes = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />, 
+    element: <MainLayout />,
     children: [
       {
         path: "/",
         element: <Home />,
       },
       {
-        path: "/timeline",
-        element: <Timeline />,
+        path: "/resources",
+        element: <Resources />,
       },
       {
         path: "/opening",
@@ -28,8 +31,20 @@ export const routes = createBrowserRouter([
         element: <About />,
       },
       {
+        path: "/water",
+        element: <Water />,
+      },
+      {
+        path: "/wind",
+        element: <Wind />,
+      },
+      {
+        path: "/energy",
+        element: <Energy />,
+      },
+      {
         path: "/visit",
-        element: <Visit/>,
+        element: <Visit />,
       },
     ],
   },
